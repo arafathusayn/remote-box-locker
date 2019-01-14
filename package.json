@@ -1,0 +1,33 @@
+{
+  "name": "remote-box-locker",
+  "version": "1.0.0",
+  "description": "Remotely lock/unlock your computer (Linux) with SSH Key + IP whitelisting",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"no tests yet\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arafathusayn/remote-box-locker.git"
+  },
+  "keywords": [
+    "Linux",
+    "Remote",
+    "SSH",
+    "Lock",
+    "Unlock"
+  ],
+  "author": "Arafat Husayn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arafathusayn/remote-box-locker/issues"
+  },
+  "homepage": "https://github.com/arafathusayn/remote-box-locker#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "helmet": "^3.15.0",
+    "ssh2": "^0.8.0"
+  }
+}
