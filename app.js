@@ -81,7 +81,7 @@ app.post("/lock", (req, res) => {
     }
   }
 
-  if (result.success && !result.error & whilelist.includes(clientIPAddress)) {
+  if (result.success && !result.error && whilelist.includes(clientIPAddress)) {
     exec("loginctl lock-session");
     result.client = clientIPAddress;
   } else if (!whilelist.includes(clientIPAddress)) {
