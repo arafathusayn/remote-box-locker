@@ -1,3 +1,5 @@
+// @ts-check
+
 const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
@@ -27,6 +29,11 @@ if (trustProxy) {
   app.set("trust proxy", trustProxy);
 }
 
+/**
+ * @param {string} address
+ *
+ * @returns {string}
+ */
 function getRemoteAddress(address) {
   address = address.replace("::ffff:", "");
 
