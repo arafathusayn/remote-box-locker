@@ -65,14 +65,13 @@ app.post("/lock", (req, res) => {
   };
 
   try {
-    crypto
-      .privateEncrypt(
-        {
-          key,
-          passphrase,
-        },
-        Buffer.from("")
-      );
+    crypto.privateEncrypt(
+      {
+        key,
+        passphrase,
+      },
+      Buffer.from(""),
+    );
 
     result.success = true;
   } catch (err) {
@@ -91,7 +90,13 @@ app.post("/lock", (req, res) => {
     result.success = false;
   }
 
-  console.log(`\n[${new Date()}] ${clientIPAddress} locked and received: ${JSON.stringify(result, null, 2)}\n`);
+  console.log(
+    `\n[${new Date()}] ${clientIPAddress} locked and received: ${JSON.stringify(
+      result,
+      null,
+      2,
+    )}\n`,
+  );
 
   res.json(result);
 });
@@ -116,14 +121,13 @@ app.post("/unlock", (req, res) => {
   };
 
   try {
-    crypto
-      .privateEncrypt(
-        {
-          key,
-          passphrase,
-        },
-        Buffer.from("")
-      );
+    crypto.privateEncrypt(
+      {
+        key,
+        passphrase,
+      },
+      Buffer.from(""),
+    );
 
     result.success = true;
   } catch (err) {
@@ -143,7 +147,13 @@ app.post("/unlock", (req, res) => {
     result.success = false;
   }
 
-  console.log(`\n[${new Date()}] ${clientIPAddress} unlocked and received: ${JSON.stringify(result, null, 2)}\n`);
+  console.log(
+    `\n[${new Date()}] ${clientIPAddress} unlocked and received: ${JSON.stringify(
+      result,
+      null,
+      2,
+    )}\n`,
+  );
 
   res.json(result);
 });
