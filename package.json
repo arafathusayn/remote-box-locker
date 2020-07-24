@@ -4,7 +4,7 @@
   "description": "Remotely lock/unlock your computer (Linux) with SSH Key + IP whitelisting",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"no tests yet\""
+    "start": "node app"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,7 @@
     "Lock",
     "Unlock"
   ],
-  "author": "Arafat Husayn",
+  "author": "Arafat Husayn <hello@arafat.dev>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/arafathusayn/remote-box-locker/issues"
