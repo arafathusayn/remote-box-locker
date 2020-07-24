@@ -23,7 +23,10 @@ const SERVER_PORT = process.env.SERVER_PORT || 3333;
 const username = process.env.USERNAME || "root";
 const privateKeyPath = process.env.PRIVATE_KEY_PATH || `/home/${username}/.ssh/id_rsa`;
 const trustProxy = process.env.TRUST_PROXY == "true" ? true : false;
-const whilelist = process.env.IP_WHITELIST.split(',').concat(['localhost', '127.0.0.1']) || ['localhost', '127.0.0.1'];
+const localhostAliases = ["localhost", "127.0.0.1", "0.0.0.0"];
+const whilelist =
+  (process.env.IP_WHITELIST && process.env.IP_WHITELIST.split(",").concat(localhostAliases)) ||
+  localhostAliases;
 
 if (trustProxy) {
   app.set("trust proxy", trustProxy);
@@ -37,7 +40,7 @@ if (trustProxy) {
 function getRemoteAddress(address) {
   address = address.replace("::ffff:", "");
 
-  if (address == "::1") {
+  if (address === "::" || address === "::0" || address === "::1") {
     return "localhost";
   }
 
